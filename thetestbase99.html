@@ -284,6 +284,25 @@
       animation: popIn 0.5s ease-out forwards;
 
   }
+    #adminDiv {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #141414;
+    color: white;
+    inset: 0;
+    margin:auto;
+    position: fixed;
+    z-index: 1000;
+    border-radius:20px; 
+    opacity:85%; 
+    width:85%;
+    height: 73%; 
+    overflow-x: hidden;
+    overflow-y: auto;
+      animation: popIn 0.5s ease-out forwards;
+
+  }
 
   /* Logo Styles */
   #logo {
@@ -589,6 +608,43 @@
 
 
         
+     
+        
+       
+
+          
+</div>
+
+<div id="adminDiv">
+  <button class="close-btn" onclick="document.getElementById('chatDiv').style.display = 'none';">×</button>
+  &nbsp;&nbsp;&nbsp;&nbsp; <!-- Adds manual spacing -->
+  <a href='/t9os'>
+    <button class="close-btn">refresh</button>
+  </a>
+<style>
+  .warn{
+    top:0;
+    font-family: sans-serif;
+    position: absolute;
+    right:0;
+  }
+
+  </style>
+  <p class="warn"></p>
+
+  <iframe class="frame" src="/test100.html"></iframe>
+  <style>
+    .frame{
+      width:100%;
+      height:95%;
+      bottom:0;
+      position: absolute;
+      border:none;
+      border-radius:0px 0px 20px 20px;
+      left:0;
+    }
+  </style>
+           
      
         
        
@@ -1099,6 +1155,10 @@
   </a>
 
  
+    <a onclick="sound()">
+    <img class="timg" src="admin2.png">
+  </a>
+
 
   <h2 class="battery" id="batteryPercentage"></h2>
   <div class="clock" id="time"></div>
@@ -1203,6 +1263,13 @@
       hiddenDiv.style.display = 'none';
     }
   });
+</script>
+
+<script>
+  function admin(){
+    const div = document.getElementById('adminDiv');
+    div.style.display = div.style.display === 'block' ? 'none' : 'block';
+  }
 </script>
 
 <script>
