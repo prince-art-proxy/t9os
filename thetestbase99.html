@@ -781,8 +781,15 @@ backdrop-filter: blur(7px);
 
  <script>
 function goBackToTest99() {
+  // wait for the iframe to exist
   const frame = document.getElementById("frame2");
+  if (!frame) return; // iframe not found yet
+
+  // reload iframe with the desired page
   frame.src = "test99.html";
+
+  // optional: force reload to bypass caching
+  frame.contentWindow.location.reload(true);
 }
 </script>
 
