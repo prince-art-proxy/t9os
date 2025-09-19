@@ -776,10 +776,16 @@ backdrop-filter: blur(7px);
 </div>
 <div id="hiddenDiv">
   <button class="close-btn" onclick="document.getElementById('hiddenDiv').style.display = 'none';">●</button>
-  <button class="back" style="top:10px; left: 50px; position: fixed; color:white;"    onclick="document.getElementById('frame2').contentWindow.history.back()">←</button>
+  <button class="back" style="top:10px; left: 50px; position: fixed; color:white;"     onclick="goBackToTest99()">←</button>
 <h3 style="  left: 50%; color:white; top:-5px; position: absolute;   transform: translateX(-50%);      " >Games</h3>
 
- 
+ <script>
+function goBackToTest99() {
+  const frame = document.getElementById("frame2");
+  frame.src = "test99.html";
+}
+</script>
+
 <iframe id="frame2" src="test99.html"></iframe>
   <style>
     #frame2{
