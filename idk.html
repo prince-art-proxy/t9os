@@ -1,9 +1,9 @@
 <script>
 var win = window.open();
-var url = "thetestbase99.html";   // your same-domain page
-var faviconUrl = "favicon.png";   // default favicon
+var url = "thetestbase99.html";   // same-origin page you control
+var faviconUrl = "favicon.png";   // default fallback favicon
 
-// Initial about:blank shell
+// Base shell for about:blank tab
 win.document.write(`
 <!DOCTYPE html>
 <html>
@@ -16,8 +16,8 @@ win.document.write(`
 `);
 win.document.close();
 
-// Create and append iframe
-var iframe = win.document.createElement('iframe');
+// Add iframe
+var iframe = win.document.createElement("iframe");
 iframe.style.position = "fixed";
 iframe.style.top = "0";
 iframe.style.left = "0";
@@ -27,24 +27,40 @@ iframe.style.border = "none";
 iframe.src = url;
 win.document.body.appendChild(iframe);
 
-// --- Mirror logic here ---
+// Grab reference to favicon in about:blank shell
 var favicon = win.document.querySelector("link[rel='icon']");
 
-// When iframe loads, copy its title + favicon
+// Function to sync title + favicon
+function syncFromIframe(iframeDoc) {
+  // Copy title
+  win.document.title = iframeDoc.title || "T9 OS";
+
+  // Copy favicon
+  const iframeIcon = iframeDoc.querySelector("link[rel~='icon']");
+  if (iframeIcon) {
+    favicon.href = iframeIcon.href;
+  } else {
+    favicon.href = faviconUrl; // fallback
+  }
+}
+
+// Watch for changes inside the iframe
 iframe.addEventListener("load", () => {
   try {
     const iframeDoc = iframe.contentDocument;
+    syncFromIframe(iframeDoc);
 
-    // Copy title
-    win.document.title = iframeDoc.title || "T9 OS";
+    // Use MutationObserver to auto-update when title or favicon changes
+    const observer = new MutationObserver(() => {
+      syncFromIframe(iframeDoc);
+    });
 
-    // Copy favicon
-    const iframeIcon = iframeDoc.querySelector("link[rel~='icon']");
-    if (iframeIcon) {
-      favicon.href = iframeIcon.href;
-    } else {
-      favicon.href = faviconUrl; // fallback
-    }
+    observer.observe(iframeDoc.head, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["href", "rel"]
+    });
   } catch (e) {
     console.warn("Cross-origin page, can't mirror title/favicon", e);
   }
