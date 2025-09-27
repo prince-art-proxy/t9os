@@ -623,20 +623,20 @@ backdrop-filter: blur(7px);
 
 <div id="soundDiv">
   <button class="close-btn" onclick="document.getElementById('soundDiv').style.display = 'none';">●</button>
-  <h1 class="gtext"> Soundboard </h1>
-  <p color="white" style="text-align: center;"></p>
+  <h1 class="gtext"> Bookmarklets </h1>
+  <p color="white" style="text-align: center;">Drag the buttons to ur bookmarks bar.</p>
+    <p color="white" style="text-align: center;">For Blooket hacks do not drag it instead click on it and follow the instructions.</p>
 
-          
-      <button class="btn" data-sound="bruh.mp3">Bruh</button>
 
-    <button class="btn" data-sound="boom.mp3">Vine boom</button>
-
-    <button class="btn" data-sound="indian.mp3">Indian music</button>
-
-    <button class="btn" data-sound="tacobell.mp3">Taco Bell bong</button>
-
-    <button class="btn" data-sound="fart.mp3">Loud Fart</button>
-
+          <a href="javascript:(function(x,y){if(!window.click){window.click=!0,document.body.style.cursor='crosshair';var cps=prompt('Autoclicker CPS: (Under 200 recommended)');if(!cps||isNaN(cps)?(alert(%27You entered something wrong. Try running the script again.%27),end()):alert(%27Autoclicker activated at %27+cps+%27 CPS! Do [ctrl+e] to stop.%27),addEventListener(%27mousemove%27,e=>{x=e.clientX,y=e.clientY}),addEventListener(%27keydown%27,e=>{%27e%27===e.key&&e.ctrlKey&&(alert(%27Autoclicker deactivated! Click the bookmark again to reactivate!%27),end())}),window.click)var int=setInterval(function(){var e=document.elementFromPoint(x,y);e&&e.click()},1e3/cps);function end(){clearInterval(int),window.click=!1,document.body.style.cursor=%27default%27}}})();">
+      <button class="btn" >AutoClicker</button>
+      </a>
+<a href="javascript:if(document.body.contentEditable !== 'true') {    document.body.contentEditable = 'true'; document.designMode='on'; void 0} else {    document.body.contentEditable = 'false'; document.designMode='off'; void 0}">
+      <button class="btn" >Edit Anything</button>
+      </a>
+   <a href="blk.html">
+      <button class="btn" >Blooket Hacks</button>
+      </a>
         <script>
         const buttons = document.querySelectorAll('.btn');
 
@@ -655,14 +655,16 @@ backdrop-filter: blur(7px);
      
         
        
+
+          
+</div>
+
 <script>
   function Chat(){
     const div = document.getElementById('ChatDiv');
     div.style.display = div.style.display === 'block' ? 'none' : 'block';
   }
 </script>
-          
-</div>
 
 <div id="emulatorDiv">
   <button class="close-btn" onclick="document.getElementById('emulatorDiv').style.display = 'none';">×</button>
@@ -918,8 +920,14 @@ requestAnimationFrame(trackFPS);
     <img class="timg" src="collab.png">
   </a>
 
+    
     <a onclick="sound()">
     <img class="timg" src="music.png">
+  </a>
+
+  
+    <a onclick="hacks()">
+    <img class="timg" src="hacker.png">
   </a>
 
  
@@ -940,8 +948,8 @@ requestAnimationFrame(trackFPS);
   
    <label class="label" for="background-select">Select Background:</label>
 <select id="background-select">
-  <option value="purplecity2.png">Default</option>
-                  <option value="abstract.png">Abstract</option>
+  <option value="abstract.png">Default</option>
+                  <option value="purplecity2.png">T9 OS city</option>
 
                 <option value="toyota.jpg">Toyota GR supra</option>
 
@@ -1118,6 +1126,12 @@ requestAnimationFrame(trackFPS);
   }
 </script>
 
+<script>
+  function hacks(){
+    const div = document.getElementById('hacksDiv');
+    div.style.display = div.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
 
 
 <script>
@@ -1305,7 +1319,7 @@ if (selectedBackground) {
 <script>
 
   if (!localStorage.getItem("bg")) {
-    localStorage.setItem("bg", "url('purplecity2.png') no-repeat center center fixed");
+    localStorage.setItem("bg", "url('abstract.png') no-repeat center center fixed");
   }
 
  
