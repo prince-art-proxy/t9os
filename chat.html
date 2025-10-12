@@ -92,7 +92,7 @@
       }
     }
 
-    // 🔒 Basic profanity filter
+    // its a chat filter bro dont worry dawg why u even checking page source
     const bannedWords = ["fuck", "porn", "shit", "bitch", "asshole", "dick", "bastard", "cunt", "nigger", "nigga", "fag", "slut", "faggot", "whore"]; 
 
     function containsProfanity(text) {
@@ -110,8 +110,7 @@
       if (message !== '' && username !== '') {
         // 🚫 Block profanity
         if (containsProfanity(message)) {
-          alert("⚠️ Your message contains inappropriate language and was not sent.");
-          messageInput.value = '';
+          window.location.href = "warn.html"; 
           return;
         }
 
