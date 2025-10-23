@@ -324,20 +324,20 @@ border: 1px solid rgba(255, 255, 255, 0.15);
     display: none;
     margin-top: 20px;
     padding: 10px;
-   background: rgba(0, 0, 0, 0.3); 
-border: 1px solid rgba(255, 255, 255, 0.15);    
+background-color: #1b1b1bbd;
+border: 1px solid rgb(34, 34, 34);   
     color: white;
     inset: 0;
     margin:auto;
     position: fixed;
     z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:85%;
-    height: 73%; 
+    border-radius:30px; 
+    width:95%;
+    height: 80%; 
     overflow-x: hidden;
     overflow-y: auto;
-      animation: popIn 0.5s ease-out forwards;
+box-shadow: 2px #141414;
+      animation: popIn2 0.5s ease-out forwards;
 
   }
     #adminDiv {
@@ -546,6 +546,9 @@ border: 1px solid rgba(255, 255, 255, 0.15);
      <img class="btn" src="anime-partner.png">
           </a>
         
+           <a href="https://ducky-ea0.pages.dev">
+     <img class="btn" src="duckmath.png">
+          </a>
      
         
        
@@ -556,11 +559,14 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 <div id="updateDiv">
   <button class="close-btn" onclick="document.getElementById('updateDiv').style.display = 'none';">●</button>
   <h1 class="gtext"> Updates</h1>
-<h1 style="text-align: center;">Version 2 (Beta)</h1>
-    <h3 style="text-align: center; color:white;">New update: New UI changes, new widget, new anti blocker system, and new games everyday new games are added</h3>
-        <h3 style="text-align: center; color:white;">New update: I also added a new Hacks/Bookmarklets UI where it has AutoClicker, Edit Anything, Blooket Hacks and more</h3>
+<h1 style="text-align: center;">Version 2.20 (Beta)</h1>
+        <h3 style="text-align: center; color:white;">New update: added Block Blast and added DMCA request </h3>
+                <h3 style="text-align: center; color:white;">request for more games u want me to add, thats why I only added 1 game (Fortnite/Roblox dont count)</h3>
 
-    <h3 style="text-align: center; color:white;">This is a beta so it might have some glitches</h3>
+
+
+        <h3 style="text-align: center; color:white;">Make sure to join our discord server for updates and sneak peeks!</h3>
+
 
         <h3 style="text-align: center; color:white;">If you would like to help out T9 OS please join our patreon membership. Thank you!</h3>
 
@@ -568,9 +574,9 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 
 
 
-  <a style="background-color: white; padding:10px 20px; color:black; border-radius: 10px; text-align: center; font-family: sans-serif; text-decoration: none; " href="https://www.patreon.com/c/T9OS">Support us!</a>
+  <a style="background-color: white; padding:10px 20px; color:black; border-radius: 10px; text-align: center; font-family: sans-serif; text-decoration: none; " href="https://www.patreon.com/c/T9OS"  target="_blank">Support us!</a>
 
-    <a style="background-color: 	#7289da; padding:10px 20px; color:rgb(255, 255, 255); border-radius: 10px; text-align: center; font-family: sans-serif; text-decoration: none; " href="https://discord.com/invite/tknXENDkzY">Join server!</a>
+    <a style="background-color: 	#7289da; padding:10px 20px; color:rgb(255, 255, 255); border-radius: 10px; text-align: center; font-family: sans-serif; text-decoration: none; " href="https://discord.com/invite/tknXENDkzY"  target="_blank">Join server!</a>
 
 
 
@@ -648,7 +654,7 @@ backdrop-filter: blur(7px);
 </div>
 
 <div id="hacksDiv">
-  <button class="close-btn" onclick="document.getElementById('soundDiv').style.display = 'none';">●</button>
+  <button class="close-btn" onclick="document.getElementById('hacksDiv').style.display = 'none';">●</button>
   <h1 class="gtext"> Bookmarklets </h1>
   <p color="white" style="text-align: center;">Drag the buttons to ur bookmarks bar.</p>
     <p color="white" style="text-align: center;">For Blooket hacks do not drag it instead click on it and follow the instructions.</p>
@@ -709,6 +715,15 @@ backdrop-filter: blur(7px);
            <a href='/webretro.html'>
      <img class="btn" src="emulator.png">
           </a>
+
+          
+           <a href='/tt.html'>
+     <img class="btn" src="tiktok.png">
+          </a>
+
+              <a href='/yt.html'>
+     <img class="btn" src="yt.png">
+          </a>
         
 
 
@@ -722,10 +737,13 @@ backdrop-filter: blur(7px);
 
 
 <div id="searchDiv">
-  <button class="close-btn" onclick="document.getElementById('searchDiv').style.display = 'none';">●</button>
+  <button class="close-btn2" onclick="document.getElementById('searchDiv').style.display = 'none';">●</button>
+      <button class="full-btn" onclick="fullscreenIframe2()">●</button>
+      <h3 style="  left: 50%; color:white; top:-9.5px; position: absolute;   transform: translateX(-50%);" >Browser</h3>
+
+
   &nbsp;&nbsp;&nbsp;&nbsp; <!-- Adds manual spacing -->
   <a href='/t9os.html'>
-    <button class="close-btn">refresh</button>
   </a>
 <style>
   .warn{
@@ -734,15 +752,26 @@ backdrop-filter: blur(7px);
     position: absolute;
     right:0;
   }
+   .close-btn2 {
+    background: none;
+    border: none;
+    color: rgb(255, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    font-size:20px;
+    top:0;
+} 
 
   </style>
+
   <p class="warn"></p>
 
-  <iframe class="frame" src="/active/index.html"></iframe>
+  <iframe id="frame3" class="frame" src="https://test388344448.vercel.app/"></iframe>
   <style>
     .frame{
       width:100%;
-      height:95%;
+      height:95.6%;
       bottom:0;
       position: absolute;
       border:none;
@@ -750,8 +779,22 @@ backdrop-filter: blur(7px);
       left:0;
     }
   </style>
+
+   <script>
+    function fullscreenIframe2() {
+      let iframe = document.getElementById("frame3");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { 
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { 
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
            
-     
         
        
 
@@ -975,6 +1018,8 @@ requestAnimationFrame(trackFPS);
    <label class="label" for="background-select">Select Background:</label>
 <select id="background-select">
   <option value="abstract.png">Default</option>
+                  <option value="halloween.png">halloween</option>
+
                   <option value="purplecity2.png">T9 OS city</option>
 
                 <option value="toyota.jpg">Toyota GR supra</option>
@@ -1352,7 +1397,95 @@ if (selectedBackground) {
   document.body.style.background = localStorage.getItem("bg");
   document.body.style.backgroundSize = "cover"; 
 </script>
+<div id="notifications"></div>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, onChildAdded, get } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  // 🔥 Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyDB4VU2JNQGO5pMgXGaasIiY6kFxgsb-84",
+    authDomain: "chat-99dfe.firebaseapp.com",
+    databaseURL: "https://chat-99dfe-default-rtdb.firebaseio.com",
+    projectId: "chat-99dfe",
+    storageBucket: "chat-99dfe.firebasestorage.app",
+    messagingSenderId: "17277094525",
+    appId: "1:17277094525:web:989d19d04fdde769de7f14",
+    measurementId: "G-NEXJFPJPCP"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const messagesRef = ref(db, "globalMessages");
+
+  const container = document.getElementById("notifications");
+
+  // Function to show a toast
+  function showNotification(text) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.textContent = text;
+    container.appendChild(toast);
+
+    // Remove after 5 seconds
+    setTimeout(() => {
+      toast.style.transition = "opacity 0.5s ease";
+      toast.style.opacity = "0";
+      setTimeout(() => toast.remove(), 500);
+    }, 5000);
+  }
+
+  // ✅ Record current timestamp when user loads the page
+  const pageLoadTime = Date.now();
+
+  // Listen for new messages only AFTER page load
+  onChildAdded(messagesRef, (snapshot) => {
+    const msg = snapshot.val();
+    if (!msg.timestamp || msg.timestamp >= pageLoadTime) {
+      showNotification(msg.text);
+    }
+  });
+</script>
+
+<style>
+  #notifications {
+    position: fixed;
+    top: 29.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toast {
+    background-color:#1b1b1bbd;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-out;
+    font-size: 16px;
+    opacity: 0.95;
+    max-width: 80%;
+    text-align: center;
+    opacity:85%;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
 
 </head>
 
