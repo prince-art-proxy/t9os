@@ -103,6 +103,16 @@ color: white;
 .navbar img{
   opacity:1;
 }
+.navbar.vertical {
+  top: 50%;
+  left: 10px;
+  bottom: auto;
+  transform: translateY(-50%);
+  flex-direction: column;
+  width: 60px;
+  height: auto;
+  padding: 10px 0;
+}
 
 
 
@@ -1287,52 +1297,22 @@ requestAnimationFrame(trackFPS);
 </div>
   
 <script>
-const navbar = document.getElementById('navbar');
+const navbar = document.getElementById('navba');
 
-// Functions to set horizontal/vertical
-function setHorizontal() {
-  navbar.style.bottom = '10px';
-  navbar.style.left = '50%';
-  navbar.style.top = '';
-  navbar.style.transform = 'translateX(-50%)';
-  navbar.style.flexDirection = 'row';
-  navbar.style.width = '250px';
-  navbar.style.height = '50px';
-  navbar.dataset.orientation = 'horizontal';
-}
-
-function setVertical() {
-  navbar.style.top = '50%';
-  navbar.style.left = '10px';
-  navbar.style.bottom = '';
-  navbar.style.transform = 'translateY(-50%)';
-  navbar.style.flexDirection = 'column';
-  navbar.style.width = '60px';
-  navbar.style.height = '220px';
-  navbar.dataset.orientation = 'vertical';
-}
-
-// Toggle function
 function toggleNavbar() {
-  if(navbar.dataset.orientation === 'vertical') {
-    setHorizontal();
-    localStorage.setItem('navbarOrientation', 'horizontal');
-  } else {
-    setVertical();
-    localStorage.setItem('navbarOrientation', 'vertical');
-  }
+  navbar.classList.toggle('vertical');
+  const isVertical = navbar.classList.contains('vertical');
+  localStorage.setItem('navbarOrientation', isVertical ? 'vertical' : 'horizontal');
 }
 
-// Initialize navbar on page load
-window.onload = function() {
+window.addEventListener('load', () => {
   const saved = localStorage.getItem('navbarOrientation');
-  if(saved === 'vertical') {
-    setVertical();
-  } else {
-    setHorizontal();
+  if (saved === 'vertical') {
+    navbar.classList.add('vertical');
   }
-};
+});
 </script>
+
 
 
 <script>
