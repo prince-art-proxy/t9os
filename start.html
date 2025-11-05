@@ -1,21 +1,25 @@
 <meta name="cddbea996448badd1b0ab06832f72cfcb6aa4ebc" content="cddbea996448badd1b0ab06832f72cfcb6aa4ebc" />
 <title>T9 OS</title>
+<meta http-equiv="Cache-Control" content="max-age=31536000, public">
 <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
-
 <div class="typewriter">
-  <h1>Welcome to T9 OS V2</h1>
+  <h1 id="time2">T9 OS</h1>
 </div>
 
-<div class="bg-animation">
-  <div id='stars'></div>
-  <div id='stars2'></div>
-  <div id='stars3'></div>
-  <div id='stars4'></div>
-</div><!-- / STAR ANIMATION -->
+<script>
+  function updateTime2() {
+    var date = new Date();
+    var options = { hour: 'numeric', minute: 'numeric', hour12: true };
+    var formattedTime = date.toLocaleTimeString('en-US', options);
+    document.getElementById("time2").innerHTML = formattedTime;
+  }
 
-</div>
+  // Call the function once to display the time immediately
+  updateTime2();
 
-
+  // Call the function every second to update the time
+  setInterval(updateTime2, 1000);
+</script>
     
     
     <style>
@@ -222,32 +226,18 @@ button:hover span {
   color: #ffffff;
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid rgb(255, 255, 255); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   text-align:center;
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .5s step-end infinite;
     top:200px;
     position:relative;
     font-size:50px;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(255, 255, 255) }
-}
 body{
-  background-image: url("purplecity2.png");  
+  background-image: url("t9os4.png");  
 }
 html, body {
   overflow: hidden; /* Disables scrolling */
@@ -268,6 +258,23 @@ html, body {
       position: fixed;
   }
 </style>
+<!-- Default Statcounter code for T9 OS https://t9os.com/
+-->
+<script type="text/javascript">
+var sc_project=13181443; 
+var sc_invisible=1; 
+var sc_security="593e7edf"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13181443/0/593e7edf/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
 // Get the select element
@@ -295,7 +302,7 @@ if (selectedBackground) {
 <script>
   // If no background is saved yet, set default
   if (!localStorage.getItem("bg")) {
-    localStorage.setItem("bg", "url('abstract.png') no-repeat center center fixed");
+    localStorage.setItem("bg", "url('t9os6.png') no-repeat center center fixed");
   }
 
   // Always apply the saved background
@@ -331,10 +338,7 @@ if (selectedBackground) {
   </a>
 
     
-    <a onclick="sound()">
-    <img class="timg" src="music.png">
-  </a>
-
+  
   
     <a onclick="hacks()">
     <img class="timg" src="hacks.png">
@@ -342,68 +346,67 @@ if (selectedBackground) {
 
  
 
-  <h2 class="battery" id="batteryPercentage"></h2>
-  <div class="clock" id="time"></div>
-
+ 
 
 </div>
 
+
+
 <style>
   .tnav {
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 100%;
-    opacity: 0.5;
-    background-color: black;
-    position: fixed;
-    gap: 45.7px;            /* space between images */
+    top:0;
+    height:25px;
+    opacity:50%; 
+    background-color:black;
+    position:fixed;
+    left:50%;
+transform: translateX(-50%);
+    width:25%;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display: flex;        /* make it a flex container */
-    align-items: center;  /* vertically center items */
-    padding-left: 10px;   /* optional padding from the left */
-    z-index: 1000;
-}
-
-.timg {
-    width: 17px;
-    cursor: pointer;
-        transform: translateY(3px);
-        left:1px;
-        display:flex;
-
-
-}
-
-.timg:hover {
-      transform: translateY(3px);
-
-
-}
-
-   .clock {
-    font: caption;
-    right: 30px;
-    color: white;
-    font-size: 15px;
-    position: fixed;
-    top:5px;
+    
   }
+  .timg{
+    width:17px;
+    transform: translateY(-3px);
+    gap:70px;
+    padding: 10px 20px;
+
+  }
+  .timg:hover{
+    transform: translateY(-4x);
+
+
+  }
+
+
+  .clock {
+  color: white;
+  font-size: 35px;
+  position: fixed;
+  top: 40px;
+  left: 60px;
+  text-shadow: 0 0 10px #00ffff;
+  font-family: 'Orbitron', sans-serif;
+}
+
 
   /* Battery Styles */
   .battery {
     
-  font: caption;
-  right: 185px;
-  color: white;
-  position: absolute;
-  top: 0;
+color: white;
   font-size: 15px;
-  line-height: 1;
-  /* Optional: if you still need fine adjustment */
-  transform: translateY(-5px);
-}
+  position: fixed;
+  top: 65px;
+  left: 60px;
+  text-shadow: 0 0 10px #00ffff;
+  font-family: 'Orbitron', sans-serif;
 
+
+  }
 </style>
 <script>
   function updateTime() {

@@ -628,7 +628,7 @@ border: 1px solid rgba(255, 255, 255, 0.15);
   <h1 class="gtext"> Updates</h1>
 <h1 style="text-align: center;">Version 2.50 </h1>
         <h3 style="text-align: center; color:white;">New update: Fixed a bunch of bugs new UI changes new wallpaper.</h3>
-                <h3 style="text-align: center; color:white;">request for more games u want me to add, thats why I only added 1 game (Fortnite/Roblox dont count)</h3>
+                <h3 style="text-align: center; color:white;">New UI, New terminal, and Fixing blocked games</h3>
 
 
 
@@ -1218,10 +1218,9 @@ requestAnimationFrame(trackFPS);
   
    <label class="label" for="background-select">Select Background:</label>
 <select id="background-select">
-  <option value="abstract.png">Default</option>
-                      <option value="t9os6.png">T9 Wallpaper</option>
+  <option value="t9os6.png">Default</option>
+                      <option value="abstract.png">T9 Abstract</option>
 
-                    <option value="t9os4.png">Blue abstract</option>
                   <option value="red.jpg">Red Abstract</option>
                   <option value="halloween.png">halloween</option>
 
@@ -1303,7 +1302,16 @@ requestAnimationFrame(trackFPS);
     });
   </script>
 
+<script>
+  // If no background is saved yet, set default
+  if (!localStorage.getItem("bg")) {
+    localStorage.setItem("bg", "url('t9os6.png') no-repeat center center fixed");
+  }
 
+  // Always apply the saved background
+  document.body.style.background = localStorage.getItem("bg");
+  document.body.style.backgroundSize = "cover"; // makes sure image fits screen
+</script>
 
 <script>
   function updateTime() {
